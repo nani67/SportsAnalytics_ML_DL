@@ -29,3 +29,19 @@ model.compile(optimizer = 'adam', loss = 'mse', metrics=['accuracy'])
 
 history = model.fit(X_train, Y_train, epochs = 300, batch_size = 50)
 
+import matplotlib.pyplot as plt
+
+plt.plot(history.history['accuracy'])
+plt.title('Model accuracy')
+plt.ylabel('Accuracy')
+plt.xlabel('Epoch')
+plt.legend(['Train', 'Test'], loc='upper left')
+plt.show()
+
+plt.plot(history.history['loss'])
+plt.title('Model loss')
+plt.ylabel('Loss')
+plt.xlabel('Epoch')
+plt.legend(['Train', 'Test'], loc='upper left')
+plt.show()
+
